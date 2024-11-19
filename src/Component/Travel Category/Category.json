@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "adventureTitle": "Everest Base Camp Trek",
+    "image": "https://i.ibb.co.com/RCYmHw2/Everest-Base-Camp-Trek.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "A trek to the base of the world's highest peak.",
+    "adventureCost": 1500,
+    "bookingAvailability": true,
+    "location": "Nepal",
+    "duration": "14 days",
+    "adventureLevel": "Difficult"
+  },
+  {
+    "id": 2,
+    "adventureTitle": "Annapurna Circuit Trek",
+    "image": "https://i.ibb.co.com/Gs9KDv4/Annapurna-Circuit-Trek.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "A classic trek through diverse landscapes in Nepal.",
+    "adventureCost": 1200,
+    "bookingAvailability": true,
+    "location": "Nepal",
+    "duration": "12 days",
+    "adventureLevel": "Moderate"
+  },
+  {
+    "id": 3,
+    "adventureTitle": "Inca Trail to Machu Picchu",
+    "image": "https://i.ibb.co.com/pKLPkX7/Inca-Trail-to-Machu-Picchu.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "A historic trek through ancient Inca ruins.",
+    "adventureCost": 1800,
+    "bookingAvailability": false,
+    "location": "Peru",
+    "duration": "5 days",
+    "adventureLevel": "Moderate"
+  },
+  {
+    "id": 4,
+    "adventureTitle": "Mount Kilimanjaro Trek",
+    "image": "https://i.ibb.co.com/PM0zyrv/Mount-Kilimanjaro-Trek.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "Climb Africa's highest mountain.",
+    "adventureCost": 2500,
+    "bookingAvailability": true,
+    "location": "Tanzania",
+    "duration": "7 days",
+    "adventureLevel": "Challenging"
+  },
+  {
+    "id": 5,
+    "adventureTitle": "Torres del Paine W Trek",
+    "image": "https://i.ibb.co.com/wCMkFvG/Torres-del-Paine-W-Trek.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "A trek through Patagonia's iconic landscapes.",
+    "adventureCost": 2200,
+    "bookingAvailability": true,
+    "location": "Chile",
+    "duration": "6 days",
+    "adventureLevel": "Moderate"
+  },
+  {
+    "id": 6,
+    "adventureTitle": "The Dolomites Alta Via",
+    "image": "https://i.ibb.co.com/JrCv4gX/The-Dolomites-Alta-Via.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "A scenic trek in the Italian Alps.",
+    "adventureCost": 1400,
+    "bookingAvailability": true,
+    "location": "Italy",
+    "duration": "8 days",
+    "adventureLevel": "Moderate"
+  },
+  {
+    "id": 7,
+    "adventureTitle": "Langtang Valley Trek",
+    "image": "https://i.ibb.co.com/Nsq6ppb/Langtang-Valley-Trek.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "A trek through a serene valley with stunning views.",
+    "adventureCost": 1000,
+    "bookingAvailability": true,
+    "location": "Nepal",
+    "duration": "7 days",
+    "adventureLevel": "Easy to Moderate"
+  },
+  {
+    "id": 8,
+    "adventureTitle": "Toubkal Trek in Morocco",
+    "image": "https://i.ibb.co.com/xFXD3hb/Toubkal-Trek-in-Morocco.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "Climb North Africa's highest peak.",
+    "adventureCost": 900,
+    "bookingAvailability": true,
+    "location": "Morocco",
+    "duration": "3 days",
+    "adventureLevel": "Moderate"
+  },
+  {
+    "id": 9,
+    "adventureTitle": "The Haute Route in Alps",
+    "image": "https://i.ibb.co.com/54dmKVK/The-Haute-Route-in-Alps.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "A stunning trek across the French and Swiss Alps.",
+    "adventureCost": 2000,
+    "bookingAvailability": true,
+    "location": "Switzerland",
+    "duration": "10 days",
+    "adventureLevel": "Challenging"
+  },
+  {
+    "id": 10,
+    "adventureTitle": "K2 Base Camp Trek",
+    "image": "https://i.ibb.co.com/vsVxLnV/K2-Base-Camp-Trek.jpg",
+    "categoryName": "Mountain Treks",
+    "shortDescription": "A challenging trek to the base of the world's second-highest mountain.",
+    "adventureCost": 3000,
+    "bookingAvailability": false,
+    "location": "Pakistan",
+    "duration": "15 days",
+    "adventureLevel": "Extremely Difficult"
+  }
+]
