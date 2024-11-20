@@ -1,26 +1,23 @@
 import { CgProfile } from "react-icons/cg";
-import { Link } from "react-router-dom";
 import img from "../assets/logos.jpg";
+import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const link = (
     <>
-      <Link to="/">
-        {" "}
+      <NavLink to="/">
         <li className="mx-6 font-semibold text-lg">Home </li>
-      </Link>
+      </NavLink>
       <Link to="/dashboard">
-        {" "}
         <li className="mx-6 font-semibold text-lg">Dashbord</li>
       </Link>
       <Link to="/about">
-        {" "}
         <li className="mx-6  font-semibold text-lg">About </li>
       </Link>
     </>
   );
   return (
     <div className="">
-      <div className="navbar border-t-4 border-b-4 border-white  px-5">
+      <div className="navbar border-t-4 border-b-4 border-blue-800  px-5">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,21 +43,21 @@ const Navbar = () => {
               {link}
             </ul>
           </div>
-        <div className="flex items-center gap-3">
-        <img src={img} className="w-16 h-16 rounded-full "  alt="" />
-        <h2 className="text-2xl font-bold">Mountain Sign</h2>
-        </div>
+          <div className="flex items-center gap-3">
+            <img src={img} className="w-16 h-16 rounded-full " alt="" />
+            <h2 className="text-2xl font-bold">Mountain Sign</h2>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className="navbar-end">
           <CgProfile className="w-9 h-9 mx-2" />
-          <Link to="/signup">
-            {" "}
-            <a className=" border-2 border-white p-3 rounded-2xl bg-sky-200 text-black">
-              Sign-Up
-            </a>
+          <Link
+            to="/auth/login"
+            className="border-2 border-white p-3 rounded-2xl bg-sky-200 text-black"
+          >
+            Log-in
           </Link>
         </div>
       </div>
