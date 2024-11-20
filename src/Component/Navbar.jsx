@@ -1,7 +1,10 @@
 import { CgProfile } from "react-icons/cg";
 import img from "../assets/logos.jpg";
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "./Providers/AuthProvider";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const link = (
     <>
       <NavLink to="/">
@@ -52,13 +55,24 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className="navbar-end">
-          <CgProfile className="w-9 h-9 mx-2" />
-          <Link
-            to="/auth/login"
-            className="border-2 border-white p-3 rounded-2xl bg-sky-200 text-black"
-          >
-            Log-in
-          </Link>
+          <p>{user && user.email}</p>
+          <CgProfile className="w-9 h-9 mx-2 " />
+          {user && user?.email ? (
+            <button
+              onClick={logOut}
+              className="border-2 border-white p-3 rounded-2xl bg-sky-200 text-black"
+            >
+              Log-out
+            </button>
+          ) : (
+            <Link
+              to="/auth/login"
+              className="border-2 border-white p-3 rounded-2xl bg-sky-200 text-black"
+            >
+              Log-in
+            </Link>
+          )}
+          
         </div>
       </div>
     </div>

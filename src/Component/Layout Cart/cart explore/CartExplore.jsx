@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const CartExplore = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const CartExplore = () => {
       <h1 className="text-5xl font-bold">{adventureTitle}</h1>
       <p className="py-6">{shortDescription}
       </p>
-      <button className="btn btn-primary">Get Started</button>
+     <Link to={"/"}><button className="btn btn-primary">Back To Carts</button></Link>
     </div>
   </div>
 </div>

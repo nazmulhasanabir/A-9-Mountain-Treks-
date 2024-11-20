@@ -5,6 +5,7 @@ import MainLayout from "../Main layout/MainLayout";
 import Auth from "../Layout Auth/Auth";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
   {
@@ -17,7 +18,9 @@ const Router = createBrowserRouter([
       },
       {
         path: "/category/:id",
-        element: <CartExplore></CartExplore>,
+        element: (<PrivateRoute>
+            <CartExplore></CartExplore>
+        </PrivateRoute>),
         loader: () => fetch("../Carts.json"),
       },
     ],
