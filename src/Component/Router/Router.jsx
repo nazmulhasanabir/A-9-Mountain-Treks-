@@ -6,6 +6,7 @@ import Auth from "../Layout Auth/Auth";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import About from "../About/About";
 
 const Router = createBrowserRouter([
   {
@@ -40,7 +41,10 @@ const Router = createBrowserRouter([
       },
     ],
   },
-
+{
+    path:"about",
+    element:<About></About>
+},
   {
     path: "*",
     element: <h1>404 ! Error</h1>,

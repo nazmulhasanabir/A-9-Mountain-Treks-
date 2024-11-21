@@ -10,7 +10,7 @@ const Carts = () => {
   }, []);
   return (
     <div>
-      <div className="grid lg:grid-cols-3 gap-10">
+      <div className="grid lg:grid-cols-3 gap-10 justify-center">
         {carts.map((cart) => (
           <Cart key={cart.id} cart={cart}></Cart>
         ))}

@@ -5,7 +5,7 @@ import Carts from "../Layout Cart/Carts"
 const MainLayout = () => {
   return (
     <div>
-      <div className="carousel w-full mx-auto mt-6" >
+      <div className="carousel w-full mx-auto mt-6 " >
         <div id="slide1" className="carousel-item relative w-full">
           <img src={cover} className="w-[900px] mx-auto rounded-lg" />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -37,7 +37,7 @@ const MainLayout = () => {
           </div>
         </div>
       </div>
-      <h2 className="text-6xl font-semibold p-16 text-center gap-y-10 text-sky-700 ">
+      <h2 className="text-3xl bg-purple-900 text-white rounded-3xl sm:text-3xl lg:text-6xl font-normal lg:font-semibold p-4 lg:p-8 mb-6 text-center gap-y-10 ">
         Seeing the World <br />
         Through the Eyes of My Lens
       </h2>

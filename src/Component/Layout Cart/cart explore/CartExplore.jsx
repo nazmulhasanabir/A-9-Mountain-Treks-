@@ -1,3 +1,4 @@
+import { FaFlag } from "react-icons/fa";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const CartExplore = () => {
@@ -7,20 +8,64 @@ const CartExplore = () => {
 
   const cart = data.find((detail) => detail.id === CartId);
 
-  const { image, adventureTitle,shortDescription,adventureCost,location,duration,adventureLevel,ecoFriendlyFeatures } = cart;
+  const {
+    image,
+    adventureTitle,
+    shortDescription,
+    adventureCost,
+    location,
+    duration,
+    adventureLevel,
+    ecoFriendlyFeatures,
+    bookingAvailability,
+  } = cart;
   return (
-    <div>
-     <div className="hero bg-base-200 min-h-screen">
-  <div className="hero-content text-center">
-    <div className="max-w-md">
-        <img src={image} alt="" />
-      <h1 className="text-5xl font-bold">{adventureTitle}</h1>
-      <p className="py-6">{shortDescription}
+    <div >
+      <div className="card bg-base-100 w-full mt-7   shadow-2xl ">
+        <figure className="px-10 pt-10 ">
+          <img src={image} className="rounded-2xl  " />
+        </figure>
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-xl lg:text-5xl bg-gray-200 p-2 rounded-md flex flex-col lg:flex-row ">
+            {adventureTitle}
+
+            <div className="badge bg-purple-600 text-white p-2 lg:p-5 text-base lg:text-xl">
+              <FaFlag className="mx-1"></FaFlag>
+              {location}
+            </div>
+          </h2>
+          <div className="">
+          <p className="text-xl font-semibold">
+            Adventurel Level-{adventureLevel}
+          </p>
+          <p className="text-gray-700 text-lg">
+      Duration: <span className="font-semibold">{duration} days</span>
+    </p>
+    <p className="text-xl mt-2 text-gray-800">
+      <strong>About this Adventure:</strong> {shortDescription}
+    </p>
+
+    <p className="text-md mt-3 text">
+      <strong>Eco-Friendly Features:</strong> {ecoFriendlyFeatures}
+    </p>
+          </div>
+
+          <div className="card-actions flex flex-col items-center justify-center">
+          <p className="text-2xl font-bold text-teal-800">
+        Adventure Cost: <span>${adventureCost}/-</span>
       </p>
-     <Link to={"/"}><button className="btn btn-primary">Back To Carts</button></Link>
-    </div>
-  </div>
-</div>
+            {bookingAvailability ? (
+              <Link to={"https://meet.google.com/gxs-sppf-bzx"} className="p-4 font-medium rounded-2xl bg-teal-600 text-white ">
+                Talk With Expart
+              </Link>
+            ) : (
+              <button className="p-1 font-medium rounded-2xl bg-orange-500 text-black">
+                Not Available
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -5,9 +5,8 @@ import Navbar from '../Navbar';
 const Auth = () => {
     return (
         <div>
-            <header className="p-5 w-11/12 mx-auto">
-                <Navbar></Navbar>
-            </header>
+              <Navbar></Navbar>
+
           <Outlet></Outlet>
         </div>
     );
