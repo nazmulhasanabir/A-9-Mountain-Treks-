@@ -30,6 +30,7 @@ const AuthProvider = ({ children }) => {
   const UpdateUserProfile = (updateData)=>{
     return updateProfile(auth.currentUser,updateData )
   }
+ 
   const authInfo = {
     user,
     setUser,

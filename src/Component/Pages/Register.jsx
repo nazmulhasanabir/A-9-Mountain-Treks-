@@ -1,39 +1,77 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { Link, useNavigate} from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-import { toast } from "react-toastify";
+import { getAuth, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
+import app from "../Firebase/Firebase.config";
+
 
 const Register = () => {
   const {createNewUser,setUser,UpdateUserProfile} = useContext(AuthContext)
-  const navigate = useNavigate()
+  const auth = getAuth(app);
+  const [Error, setError] = useState('')
+  const provider = new GoogleAuthProvider();
+  const [succes , setSuccess] = useState(false)
+  const navigate = useNavigate();
+  // const navigate = useNavigate()
+  
   const handleSubmit=(e)=>{
     e.preventDefault()
+    const Email = e.target.email.value
+    const Password = e.target.password.value
     const form = new FormData(e.target)
     const name = form.get("name")
     const email = form.get("email")
     const photo = form.get("photo")
     const password = form.get("password")
-    console.log(name,email,photo,password);
-
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    if(Password.length < 6){
+      setError("Password Should be 6 Characters and longers")
+      return
+    }
+    
+    if(!passwordRegex.test(Password)){
+      setError("At Least one uppercase,one lowerCase,one number,one special character")
+      return
+    } 
+    
     createNewUser(email,password)
     .then(result=>{
       const user = result.user
       setUser(user)
+     setSuccess(true)
     
       UpdateUserProfile({displayName: name , photoURL:photo})
       .then(()=>{
         navigate("/")
+        
       }).catch(err=>{
         console.log(err);
       })
     })
     .catch((error) => {
+      // eslint-disable-next-line no-unused-vars
+     
       const errorCode = error.code;
+      // eslint-disable-next-line no-unused-vars
       const errorMessage = error.message;
-      toast.error(errorCode, errorMessage);
-      // ..
+        setError(errorCode,errorMessage)
+        setSuccess(false)
+      
     });
   }
+
+  const handleGoogle = () => {
+    signInWithPopup(auth, provider)
+      // eslint-disable-next-line no-unused-vars
+      .then((result) => {
+        navigate(location?.state ? location.state : "/");
+      })
+      // eslint-disable-next-line no-unused-vars
+      .catch((error) => {});
+
+  };
   return (
     <div className="min-h-screen flex justify-center items-center">
     
@@ -81,6 +119,7 @@ const Register = () => {
           <div className="form-control">
             <label className="label">
               <span className="label-text">Password</span>
+              
             </label>
             <input
               name="password"
@@ -89,13 +128,21 @@ const Register = () => {
               className="input input-bordered"
               required
             />
+            {
+        Error&& <p className="text-red-500  text-base ">{Error}</p>
+       }
           </div>
           <div className="form-control mt-6">
-            {/* <button  className="btn bg-gray-700 text-white text-lg">
-              Register
-            </button> */}
+           
             <button className="btn bg-gray-700 text-white text-lg">Register</button>
-
+           
+            <div className="mt-5">
+            <img
+                onClick={handleGoogle}
+                className="rounded-full cursor-pointer h-10 w-10 mx-auto"
+                src={"https://i.ibb.co.com/vYyWjVq/images.png"}
+                alt=""
+              />
             <p className="mt-2">
               Hey there! Got an account?{" "}
               <Link to={"/auth/login"}>
@@ -106,18 +153,10 @@ const Register = () => {
               </Link>{" "}
               in to continue!
             </p>
+            </div>
           </div>
         </form>
       </div>
-      {/* <div className="modal" role="dialog" id="my_modal_8">
-  <div className="modal-box">
-    <h3 className="text-lg font-bold">Welcome{} </h3>
-    <p className="py-4">This modal works with anchor links</p>
-    <div className="modal-action">
-      <a href="/" className="btn">Yay!</a>
-    </div>
-  </div>
-</div> */}
     </div>
   );
 };
