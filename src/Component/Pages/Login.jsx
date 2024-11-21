@@ -9,14 +9,15 @@ import app from "../Firebase/Firebase.config";
 const Login = () => {
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
- 
+
   const { userLogin, user, setUser } = useContext(AuthContext);
+
   const location = useLocation();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -32,7 +33,7 @@ const Login = () => {
         toast.error("The account is not correct ");
       });
   };
-  
+
   const handleGoogle = () => {
     signInWithPopup(auth, provider)
       // eslint-disable-next-line no-unused-vars
@@ -41,8 +42,8 @@ const Login = () => {
       })
       // eslint-disable-next-line no-unused-vars
       .catch((error) => {});
-
   };
+
   return (
     <div className="min-h-screen flex justify-center items-center">
       <div className="card  w-full max-w-sm lg:max-w-lg shrink-0 shadow-2xl p-5 lg:p-10  bg-slate-200">
@@ -75,7 +76,7 @@ const Login = () => {
               required
             />
             <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
+              <a href="reset" className="label-text-alt link link-hover">
                 Forgot password?
               </a>
             </label>
@@ -103,7 +104,6 @@ const Login = () => {
             {user && <a href="/"></a>}
           </div>
         </form>
-       
       </div>
     </div>
   );

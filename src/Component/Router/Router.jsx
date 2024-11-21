@@ -7,6 +7,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import About from "../About/About";
+import ResetPass from "./ResetPass";
 
 const Router = createBrowserRouter([
   {
@@ -39,12 +40,23 @@ const Router = createBrowserRouter([
         path: "register",
         element: <Register></Register>,
       },
+      {
+        path:"reset",
+        element:<ResetPass></ResetPass>,
+        children:[
+            {
+                path:"mail",
+                element:"https://mail.google.com/mail/?tab=rm&authuser=0&ogbl"
+            }
+        ]
+    },
     ],
   },
 {
     path:"about",
     element:<About></About>
 },
+
   {
     path: "*",
     element: <h1>404 ! Error</h1>,
