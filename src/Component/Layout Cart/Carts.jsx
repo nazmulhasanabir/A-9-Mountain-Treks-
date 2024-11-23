@@ -9,8 +9,8 @@ const Carts = () => {
       .then((data) => setCarts(data));
   }, []);
   return (
-    <div>
-      <div className="grid lg:grid-cols-3 gap-10 justify-center">
+    <div className="bg-gray-200 rounded-xl">
+      <div className="grid lg:grid-cols-3 gap-10 w-11/12 mx-auto justify-center items-center py-5   ">
         {carts.map((cart) => (
           <Cart key={cart.id} cart={cart}></Cart>
         ))}

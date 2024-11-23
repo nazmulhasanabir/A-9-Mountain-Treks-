@@ -10,26 +10,30 @@ import {
 } from "firebase/auth";
 export const AuthContext = createContext();
 const auth = getAuth(app);
+
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(user);
+
   const createNewUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const userLogin = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   const logOut = () => {
-    setLoading(true)
+    setLoading(true);
+
     return signOut(auth);
   };
-  const UpdateUserProfile = (updateData)=>{
-    return updateProfile(auth.currentUser,updateData )
-  }
+  const UpdateUserProfile = (updateData) => {
+    console.log(updateData)
+    return updateProfile(auth.currentUser, updateData);
+  };
+
  
   const authInfo = {
     user,
@@ -38,7 +42,8 @@ const AuthProvider = ({ children }) => {
     logOut,
     userLogin,
     loading,
-    UpdateUserProfile
+    UpdateUserProfile,
+   
   };
 
   useEffect(() => {

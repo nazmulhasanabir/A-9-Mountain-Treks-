@@ -19,8 +19,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-cyan-700 text-white">
-      <div className="navbar border-t-4 border-b-4 border-white  px-5">
+    <div className=" bg-cyan-600 text-white">
+      <div className="navbar border-t-4  border-white  px-5">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,7 +43,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-             <li>{link}</li>
+              <li>{link}</li>
             </ul>
           </div>
           <div className=" hidden sm:hidden lg:flex items-center gap-3">
@@ -63,48 +63,49 @@ const Navbar = () => {
                   role="button"
                   className="btn btn-ghost btn-circle"
                 >
-                  <div className="relative group ">
-                    <img 
-                      className="w-8 h-8 sm:w-8 sm:h-8  lg:w-10 lg:h-10  rounded-full"
-                      src={user.photoURL} 
+                  <div className="">
+                    <img
+                      className="w-12 h-12 sm:w-8 sm:h-8  lg:w-12 lg:h-12  rounded-full"
+                      src={user.photoURL}
                       alt=""
                     />
-                    <p className="absolute top-8  right-10 bg-blue-200 text-black px-2 py-1 rounded shadow-lg opacity-0 hover:opacity-100 ">
-                      {user.displayName}
-                    </p>
                   </div>
                 </div>
                 <div
                   tabIndex={0}
-                  className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow"
+                  className="card card-compact dropdown-content bg-sky-700  z-[1] mt-3 w-52 shadow"
                 >
-                  <div className="card-body text-black">
-                  <img
-                      className="w-8 mx-auto h-8 sm:w-8 sm:h-8  lg:w-10 lg:h-10  rounded-full"
+                  <div className="card-body text-white">
+                    <img
+                      className="w-10 mx-auto h-10 sm:w-8 sm:h-8  lg:w-10 lg:h-10  rounded-full"
                       src={user.photoURL}
                       alt=""
                     />
-                    <p className="text-center">{user.displayName}</p>
+                    <p className="text-center text-xl font-semibold">{user.displayName}</p>
+                    <p className="text-center text-base font-semibold">{user.email}</p>
                     <div className="card-actions">
-                    {user && user?.email ? (
-           <div className="flex items-center justify-center gap-5 w-full mx-auto">
-           
-            <button className="border-2 btn-primary border-white p-1 rounded-2xl bg-sky-200 text-black">Update Profile</button>
-            <button
-              onClick={logOut}
-              className="border-2 btn-primary border-white p-1 rounded-2xl bg-sky-200 text-black"
-            >
-              Log-out
-            </button>
-           </div>
-          ) : (
-            <Link
-              to="/auth/login"
-              className="border-2 btn-primary border-white p-3 rounded-2xl bg-sky-200 text-black"
-            >
-              Log-in
-            </Link>
-          )}
+                      {user && user?.email ? (
+                        <div className="flex items-center justify-center gap-5 w-full mx-auto">
+                          <Link to={"update"}>
+                            <button className="border-2 btn-primary border-white p-1 rounded-2xl bg-sky-200 text-black">
+                              Update Profile
+                            </button>
+                          </Link>
+                          <button
+                            onClick={logOut}
+                            className="btn text-white"
+                          >
+                            Log-out
+                          </button>
+                        </div>
+                      ) : (
+                        <Link
+                          to="/auth/login"
+                          className="border-2 btn-primary border-white p-3 rounded-2xl bg-sky-200 text-black"
+                        >
+                          Log-in
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -132,8 +133,6 @@ const Navbar = () => {
           ) : (
             <CgProfile className="w-9 h-9 mx-2 " />
           )}
-
-          
         </div>
       </div>
     </div>

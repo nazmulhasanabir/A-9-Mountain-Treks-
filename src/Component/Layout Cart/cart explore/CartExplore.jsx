@@ -1,13 +1,17 @@
+import { useState } from "react";
 import { FaFlag } from "react-icons/fa";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import Modal from "../../Modal";
 
 const CartExplore = () => {
   const { id } = useParams();
   const data = useLoaderData();
   const CartId = parseInt(id);
-
+  const [ismodalOpen, setIsModalOpen] = useState(false)
   const cart = data.find((detail) => detail.id === CartId);
-
+  const startHour = 10;
+  const EndHour = 20;
+ 
   const {
     image,
     adventureTitle,
@@ -19,6 +23,28 @@ const CartExplore = () => {
     ecoFriendlyFeatures,
     bookingAvailability,
   } = cart;
+  // const currentHour = new Date().getHours();
+  // const isWithinTime = currentHour >= startHour && currentHour < EndHour
+  // if(!isWithinTime){
+  //   console.log("not in time ");
+  // }else{
+  //   console.log("in time ");
+  // }
+  // const isBookingAndTime = {bookingAvailability}  
+  const isWithinTime = ()=> {
+    const currentHour = new Date().getHours();
+    return currentHour >= startHour && currentHour < EndHour
+  }
+
+  const handlclicked = (e)=> {
+    if(!isWithinTime()){
+      e.preventDefault()
+      console.log("not in time");
+      setIsModalOpen(true)
+    }
+  }
+
+
   return (
     <div >
       <div className="card bg-base-100 w-full mt-7   shadow-2xl ">
@@ -55,9 +81,9 @@ const CartExplore = () => {
         Adventure Cost: <span>${adventureCost}/-</span>
       </p>
             {bookingAvailability ? (
-              <Link to={"https://meet.google.com/gxs-sppf-bzx"} className="p-4 font-medium rounded-2xl bg-teal-600 text-white ">
-                Talk With Expart
-              </Link>
+              <a onClick={handlclicked} href="https://meet.google.com/gxs-sppf-bzx" target="_blank" className="p-4 font-medium rounded-2xl bg-teal-600 text-white ">
+                Talk With Expert
+              </a>
             ) : (
               <button className="p-1 font-medium rounded-2xl bg-orange-500 text-black">
                 Not Available
@@ -66,6 +92,7 @@ const CartExplore = () => {
           </div>
         </div>
       </div>
+      <Modal isOpen={ismodalOpen} onClose={() => setIsModalOpen(false)} message="hello world" /> 
     </div>
   );
 };

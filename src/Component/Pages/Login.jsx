@@ -8,6 +8,7 @@ import app from "../Firebase/Firebase.config";
 
 const Login = () => {
   const auth = getAuth(app);
+  const [emails , setEmails]= useState("")
   const provider = new GoogleAuthProvider();
 
   const { userLogin, user, setUser } = useContext(AuthContext);
@@ -21,7 +22,7 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-
+ 
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
@@ -45,8 +46,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="card  w-full max-w-sm lg:max-w-lg shrink-0 shadow-2xl p-5 lg:p-10  bg-slate-200">
+    <div className="min-h-screen flex justify-center items-center  ">
+      <div className="card bg-[url('https://i.ibb.co.com/wBq15Dg/system-bars-hero.png')] bg-cover  w-full max-w-sm lg:max-w-lg shrink-0 shadow-2xl p-5 lg:p-10  bg-slate-200">
         <h2 className="text-2xl font-semibold text-center">
           Login Your Account
         </h2>
@@ -56,6 +57,7 @@ const Login = () => {
               <span className="label-text">Email</span>
             </label>
             <input
+              onChange={(e)=>setEmails(e.target.value)}
               name="email"
               type="email"
               placeholder="email"
@@ -76,7 +78,7 @@ const Login = () => {
               required
             />
             <label className="label">
-              <a href="reset" className="label-text-alt link link-hover">
+              <a href={`/reset?email=${encodeURIComponent(emails)}`} className="label-text-alt link link-hover">
                 Forgot password?
               </a>
             </label>

@@ -18,7 +18,7 @@ const Cart = ({ cart }) => {
     duration
   } = cart;
   return (
-    <div className="card card-compact bg-sky-300 w-96 shadow-xl">
+    <div className="card card-compact   w-96 shadow-xl">
       <figure>
         <img className="w-[600px] h-[280px]" src={image} alt="" />
       </figure>
@@ -49,7 +49,7 @@ const Cart = ({ cart }) => {
         </div>
 
         <div className="card-actions justify-end">
-          <NavLink to={`category/${id}`} className="btn btn-primary text-white w-full">Explore</NavLink>
+          <NavLink to={`category/${id}`} className="btn btn-primary  text-white w-full">Explore</NavLink>
         </div>
       </div>
     </div>

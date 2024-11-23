@@ -8,6 +8,8 @@ import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import About from "../About/About";
 import ResetPass from "./ResetPass";
+import UpdateProfile from "../Pages/UpdateProfile";
+import Error from "./404/Error";
 
 const Router = createBrowserRouter([
   {
@@ -19,10 +21,16 @@ const Router = createBrowserRouter([
         element: <MainLayout></MainLayout>,
       },
       {
+        path: "update",
+        element: <UpdateProfile></UpdateProfile>,
+      },
+      {
         path: "/category/:id",
-        element: (<PrivateRoute>
+        element: (
+          <PrivateRoute>
             <CartExplore></CartExplore>
-        </PrivateRoute>),
+          </PrivateRoute>
+        ),
         loader: () => fetch("../Carts.json"),
       },
     ],
@@ -33,33 +41,33 @@ const Router = createBrowserRouter([
     element: <Auth></Auth>,
     children: [
       {
+        path: "register",
+        element: <Register></Register>,
+        children: [
+          {
+            path: "login",
+            element: <Login></Login>,
+          },
+        ],
+      },
+      {
         path: "login",
         element: <Login></Login>,
       },
       {
-        path: "register",
-        element: <Register></Register>,
+        path: "reset",
+        element: <ResetPass></ResetPass>,
       },
-      {
-        path:"reset",
-        element:<ResetPass></ResetPass>,
-        children:[
-            {
-                path:"mail",
-                element:"https://mail.google.com/mail/?tab=rm&authuser=0&ogbl"
-            }
-        ]
-    },
     ],
   },
-{
-    path:"about",
-    element:<About></About>
-},
+  {
+    path: "about",
+    element: <About></About>,
+  },
 
   {
     path: "*",
-    element: <h1>404 ! Error</h1>,
+    element: <Error></Error>,
   },
 ]);
 
