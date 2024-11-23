@@ -19,7 +19,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" bg-cyan-600 text-white">
+    <div className=" bg-[#4E65FF]   text-white">
       <div className="navbar border-t-4  border-white  px-5">
         <div className="navbar-start">
           <div className="dropdown">
@@ -41,7 +41,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 bg-slate-500 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
               <li>{link}</li>
             </ul>
@@ -73,7 +73,7 @@ const Navbar = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="card card-compact dropdown-content bg-sky-700  z-[1] mt-3 w-52 shadow"
+                  className="card card-compact dropdown-content bg-violet-900  z-10 mt-3 w-52 shadow"
                 >
                   <div className="card-body text-white">
                     <img
@@ -81,19 +81,23 @@ const Navbar = () => {
                       src={user.photoURL}
                       alt=""
                     />
-                    <p className="text-center text-xl font-semibold">{user.displayName}</p>
-                    <p className="text-center text-base font-semibold">{user.email}</p>
+                    <p className="text-center text-base font-semibold">
+                      {user.displayName}
+                    </p>
+                    <p className="text-center text-base font-semibold">
+                      {user.email}
+                    </p>
                     <div className="card-actions">
                       {user && user?.email ? (
                         <div className="flex items-center justify-center gap-5 w-full mx-auto">
                           <Link to={"update"}>
-                            <button className="border-2 btn-primary border-white p-1 rounded-2xl bg-sky-200 text-black">
+                            <button className="   p-1 rounded-2xl text-white bg-blue-400 ">
                               Update Profile
                             </button>
                           </Link>
                           <button
                             onClick={logOut}
-                            className="btn text-white"
+                            className=" bg-red-600 p-2 rounded-3xl text-white"
                           >
                             Log-out
                           </button>
@@ -110,25 +114,6 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="dropdown dropdown-end">
-                <ul
-                  tabIndex={0}
-                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-                >
-                  <li>
-                    <a className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>Settings</a>
-                  </li>
-                  <li>
-                    <a>Logout</a>
-                  </li>
-                </ul>
-              </div> */}
             </div>
           ) : (
             <CgProfile className="w-9 h-9 mx-2 " />

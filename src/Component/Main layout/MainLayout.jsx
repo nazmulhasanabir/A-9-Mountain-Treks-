@@ -1,6 +1,11 @@
 import cover from "../../assets/cover.jpeg";
 import cover2 from "../../assets/cover2.jpeg";
 import cover3 from "../../assets/cover3.jpeg";
+import one from "../../assets/pictures/Annapurna Circuit Trek.jpg"
+import two from "../../assets/pictures/The Dolomites Alta Via.jpg"
+import three from "../../assets/pictures/Mount Kilimanjaro Trek.jpg"
+import four from "../../assets/pictures/Torres del Paine W Trek.jpg"
+import five from "../../assets/pictures/The Dolomites Alta Via.jpg"
 import Carts from "../Layout Cart/Carts";
 // import Swiper core and required modules
 import {
@@ -22,47 +27,62 @@ import "swiper/css/scrollbar";
 
 const MainLayout = () => {
   return (
-   <div>
-    <div>
-    <Swiper
-      spaceBetween={30}
-      centeredSlides={true}
-      autoplay={{
-        delay: 1000,
-        disableOnInteraction: false,
-      }}
-      pagination={{
-        clickable: true,
-      }}
-      navigation={false}
-      modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper"
-    >
-      <div
-        slot="container-start"
-        className="parallax-bg"
-        style={{
-          "background-image":
-            "url(https://swiperjs.com/demos/images/nature-1.jpg)",
-        }}
-        data-swiper-parallax="-23%"
-      ></div>
-      <SwiperSlide>
-        <img className="w-full h-300px lg:h-[600px]" src={cover} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img className="w-full h-300px lg:h-[600px]" src={cover3} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img className="w-full h-300px lg:h-[600px]" src={cover2} />
-      </SwiperSlide>
-    </Swiper>
+    <div className="">
+      <div>
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={false}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <div
+            slot="container-start"
+            className="parallax-bg"
+            style={{
+              "background-image":
+                "url(https://swiperjs.com/demos/images/nature-1.jpg)",
+            }}
+            data-swiper-parallax="-23%"
+          ></div>
+          <SwiperSlide>
+            <img className="w-full h-300px lg:h-[600px]" src={cover} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="w-full h-300px lg:h-[600px]" src={cover3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="w-full h-300px lg:h-[600px]" src={cover2} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="w-full h-300px lg:h-[600px]" src={one} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="w-full h-300px lg:h-[600px]" src={two} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="w-full h-300px lg:h-[600px]" src={three} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="w-full h-300px lg:h-[600px]" src={four} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className="w-full h-300px lg:h-[600px]" src={five} />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
+      <div className="p-5">
+        <Carts></Carts>
+      </div>
     </div>
-    <div className="p-5">
-   <Carts></Carts>
-   </div>
-   </div>
-    
   );
 };
 

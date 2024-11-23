@@ -1,10 +1,11 @@
 import Navbar from "../Navbar";
+import Footer from "./Footer";
 
 const About = () => {
   return (
     <div>
         <Navbar></Navbar>
-     <div  className="bg-teal-700 text-center text-white p-20">
+     <div  className="bg-teal-700 text-center text-white p-20 ">
      <h2 className="text-5xl font-bold my-5">About the Developer</h2>
       <p className="font-normal text-base p-10">
         This project was crafted by <span className="font-bold">Abir</span>, a dedicated software developer with a
@@ -14,6 +15,7 @@ const About = () => {
         real value.
       </p>
      </div>
+     <Footer></Footer>
     </div>
   );
 };

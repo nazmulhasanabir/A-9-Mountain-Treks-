@@ -49,7 +49,7 @@ const Cart = ({ cart }) => {
         </div>
 
         <div className="card-actions justify-end">
-          <NavLink to={`category/${id}`} className="btn btn-primary  text-white w-full">Explore</NavLink>
+          <NavLink to={`category/${id}`} className="btn bg-[#667EEA]  text-white w-full">Explore</NavLink>
         </div>
       </div>
     </div>

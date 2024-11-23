@@ -34,15 +34,15 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="card  w-full max-w-lg shrink-0 shadow-2xl p-10  bg-slate-200">
-        <h2 className="text-2xl font-semibold text-center">
+    <div className="min-h-screen flex justify-center items-center    ">
+      <div className="card  w-full max-w-lg shrink-0 shadow-2xl p-10  bg-[url('https://i.ibb.co.com/G5Jgdfn/image.png')] bg-cover text-white" >
+        <h2 className="text-3xl font-bold text-black text-center">
           Update Your Profile
         </h2>
-        <form onSubmit={handleSubmit} className="card-body">
+        <form onSubmit={handleSubmit} className="card-body ">
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="label-text text-2xl font-bold text-black">Name</span>
             </label>
             <input
               name="name"
@@ -54,7 +54,7 @@ const UpdateProfile = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Photo url</span>
+              <span className="label-text text-2xl font-bold text-black">Photo url</span>
             </label>
             <input
               name="photo"

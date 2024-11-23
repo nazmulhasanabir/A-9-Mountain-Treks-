@@ -4,13 +4,13 @@ const Modal = ({ isOpen, onClose, message }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg p-6 w-1/3">
-        <h2 className="text-lg font-bold mb-4">Notice</h2>
-        <p className="text-gray-700 mb-4">{message}</p>
+        <h2 className="text-3xl font-bold mb-4 text-center">Notice</h2>
+        <p className="text-gray-700 mb-4 text-center font-bold text-xl">{message}</p>
         <button
           onClick={onClose}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="bg-emerald-500  w-1/5 ml-24 lg:ml-52 text-white px-2 py-2 rounded hover:bg-blue-500"
         >
-          Close
+         Close
         </button>
       </div>
     </div>

@@ -92,7 +92,7 @@ const CartExplore = () => {
           </div>
         </div>
       </div>
-      <Modal isOpen={ismodalOpen} onClose={() => setIsModalOpen(false)} message="hello world" /> 
+      <Modal isOpen={ismodalOpen} onClose={() => setIsModalOpen(false)} message="If you want to talk to an expert, come at 10 am - 8pm. We will wait for you at this time!" /> 
     </div>
   );
 };
