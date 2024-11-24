@@ -10,9 +10,6 @@ const Navbar = () => {
       <NavLink to="/">
         <li className="mx-6 font-semibold text-lg">Home </li>
       </NavLink>
-      <Link to="/dashboard">
-        <li className="mx-6 font-normal text-lg">Dashbord</li>
-      </Link>
       <Link to="/about">
         <li className="mx-6  font-semibold text-lg">About </li>
       </Link>
