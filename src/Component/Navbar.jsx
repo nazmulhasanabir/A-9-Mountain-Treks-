@@ -41,7 +41,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 bg-slate-500 rounded-box z-10 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content  bg-slate-500 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
               <li>{link}</li>
             </ul>
@@ -73,7 +73,7 @@ const Navbar = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="card card-compact dropdown-content bg-violet-900  z-10 mt-3 w-52 shadow"
+                  className="card card-compact dropdown-content bg-violet-900  z-10 mt-3 w-64 shadow"
                 >
                   <div className="card-body text-white">
                     <img
@@ -84,7 +84,7 @@ const Navbar = () => {
                     <p className="text-center text-base font-semibold">
                       {user.displayName}
                     </p>
-                    <p className="text-center text-base font-semibold">
+                    <p className="text-center text-base font-semibold ">
                       {user.email}
                     </p>
                     <div className="card-actions">

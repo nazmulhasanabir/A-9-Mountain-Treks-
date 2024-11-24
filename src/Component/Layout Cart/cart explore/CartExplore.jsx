@@ -39,7 +39,6 @@ const CartExplore = () => {
   const handlclicked = (e)=> {
     if(!isWithinTime()){
       e.preventDefault()
-      console.log("not in time");
       setIsModalOpen(true)
     }
   }

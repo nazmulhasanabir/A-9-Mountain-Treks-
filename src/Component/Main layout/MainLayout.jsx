@@ -1,21 +1,11 @@
 import cover from "../../assets/cover.jpeg";
 import cover2 from "../../assets/cover2.jpeg";
 import cover3 from "../../assets/cover3.jpeg";
-import one from "../../assets/pictures/Annapurna Circuit Trek.jpg"
-import two from "../../assets/pictures/The Dolomites Alta Via.jpg"
-import three from "../../assets/pictures/Mount Kilimanjaro Trek.jpg"
-import four from "../../assets/pictures/Torres del Paine W Trek.jpg"
-import five from "../../assets/pictures/The Dolomites Alta Via.jpg"
+import one from "../../assets/pictures/Annapurna Circuit Trek.jpg";
+
 import Carts from "../Layout Cart/Carts";
 // import Swiper core and required modules
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Parallax,
-  Autoplay,
-} from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -64,18 +54,8 @@ const MainLayout = () => {
           <SwiperSlide>
             <img className="w-full h-300px lg:h-[600px]" src={one} />
           </SwiperSlide>
-          <SwiperSlide>
-            <img className="w-full h-300px lg:h-[600px]" src={two} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className="w-full h-300px lg:h-[600px]" src={three} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className="w-full h-300px lg:h-[600px]" src={four} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className="w-full h-300px lg:h-[600px]" src={five} />
-          </SwiperSlide>
+        
+       
         </Swiper>
       </div>
 

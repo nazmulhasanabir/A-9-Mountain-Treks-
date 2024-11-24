@@ -78,7 +78,7 @@ const Login = () => {
               required
             />
             <label className="label">
-              <a href={`/reset?email=${encodeURIComponent(emails)}`} className="label-text-alt link link-hover">
+              <a href={"reset"} className="label-text-alt link link-hover">
                 Forgot password?
               </a>
             </label>
