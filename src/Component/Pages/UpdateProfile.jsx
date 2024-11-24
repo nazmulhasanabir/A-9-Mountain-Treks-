@@ -2,16 +2,13 @@ import { useContext, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-import { getAuth } from "firebase/auth";
-
-import app from "../Firebase/Firebase.config";
 
 const UpdateProfile = () => {
-  const { createNewUser, UpdateUserProfile, setUser,} =
+  const { UpdateUserProfile, setUser,} =
     useContext(AuthContext);
-  const auth = getAuth(app);
+ 
   const [Error, setError] = useState("");
-  const [succes, setSuccess] = useState(false);
+  
   //   const [succes , setSuccess] = useState(false)
   const navigate = useNavigate();
   // const navigate = useNavigate()
