@@ -36,7 +36,7 @@ const UpdateProfile = () => {
   return (
     <div className="min-h-screen flex justify-center items-center    ">
       <div className="card  w-full max-w-lg shrink-0 shadow-2xl p-10  bg-[url('https://i.ibb.co.com/G5Jgdfn/image.png')] bg-cover text-white" >
-        <h2 className="text-3xl font-bold text-black text-center">
+        <h2 className="text-3xl font-bold text-black rounded-3xl text-center">
           Update Your Profile
         </h2>
         <form onSubmit={handleSubmit} className="card-body ">

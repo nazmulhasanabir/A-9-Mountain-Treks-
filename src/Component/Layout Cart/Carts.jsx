@@ -76,7 +76,7 @@ const Carts = () => {
         </Marquee>
       </div>
       <div className="bg-gray-200 rounded-xl">
-        <div className="grid  lg:grid-cols-3 gap-10 w-11/12 mx-auto justify-center items-center py-5   ">
+        <div className="grid  lg:grid-cols-2 xl:grid-cols-3 gap-10 w-11/12 mx-auto justify-center items-center py-5   ">
           {carts.map((cart) => (
             <Cart key={cart.id} cart={cart}></Cart>
           ))}
