@@ -12,8 +12,7 @@ const ResetPass = () => {
     const email = emailRef.current.value;
 
     if (email) {
-      sendPasswordResetEmail(auth, email)
-      .then(() => {
+      sendPasswordResetEmail(auth, email).then(() => {
         toast.success("cheack your mail");
       });
     } else toast.error("provide a valid email");
@@ -38,7 +37,11 @@ const ResetPass = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button  onClick={handleReset} type="submit" className="btn btn-primary">
+            <button
+              onClick={handleReset}
+              type="submit"
+              className="btn btn-primary"
+            >
               Reset
             </button>
           </div>

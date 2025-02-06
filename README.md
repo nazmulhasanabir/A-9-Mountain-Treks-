@@ -2,7 +2,7 @@
 
 Mountain Treks is an eco-adventure booking platform that showcases various adventure experiences and allows users to explore detailed information about each. Users can log in, register, and update their profiles while enjoying a seamless and interactive interface.
 
-
+![alt text](https://i.ibb.co.com/FbjP2dVS/image.png)
 
 ## **Key Features**
 

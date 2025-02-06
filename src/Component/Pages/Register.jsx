@@ -38,6 +38,7 @@ const Register = () => {
       return;
     }
 
+   
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
@@ -61,6 +62,8 @@ const Register = () => {
         setError(errorCode, errorMessage);
         setSuccess(false);
       });
+
+
   };
 
   const handleGoogle = () => {
@@ -133,7 +136,7 @@ const Register = () => {
             <button className="btn bg-gray-700 text-white text-lg">
               Register
             </button>
-      
+
             <div className="mt-5">
               <img
                 onClick={handleGoogle}
