@@ -1,77 +1,140 @@
-# **Mountain Treks**
+# ⛰️ Mountain Treks
 
-Mountain Treks is an eco-adventure booking platform that showcases various adventure experiences and allows users to explore detailed information about each. Users can log in, register, and update their profiles while enjoying a seamless and interactive interface.
+Mountain Treks is an eco-adventure booking platform that allows users to explore and book adventure experiences seamlessly. It offers a user-friendly interface, authentication, and detailed adventure listings.
 
-![alt text](https://i.ibb.co.com/FbjP2dVS/image.png)
+![Mountain Treks](https://i.ibb.co.com/FbjP2dVS/image.png)
 
-## **Key Features**
+## 🌐 Live Demo  
+🔗 **Live Site:** [Mountain Treks](https://stalwart-naiad-1fa745.netlify.app/)
 
-1. **Single Column Layout:**
-    - **Navbar:**
-        - Displays website name, navigation links, user profile picture (if logged in), and Login/Logout buttons.
-    - **Footer:**
-        - Informative footer with essential links and social icons.
-2. **Home Page:**
-    - **Banner Section:**
-        - A dynamic slider showcasing eco-adventure images.
-    - **Adventure Experiences Section:**
-        - Cards displaying adventure details (title, image, eco-friendly features, and an “Explore Now” button).
-    - **Two Extra Sections:**
-        - Designed for additional relevant content (customizable).
-3. **Authentication:**
-    - **Login:**
-        - Form for logging in with email/password.
-        - Google Social Login option.
-        - Redirects users to their intended or home route upon success.
-    - **Register:**
-        - Form for new users with password validation.
-        - Google Social Login option.
-        - Navigates users to the home page upon success.
-    - **Forgot Password:**
-        - Users can reset passwords via email.
-4. **Adventure Details Page (Private Route):**
-    - Displays detailed information about a selected adventure.
-    - Includes a "Talk with Expert" button:
-        - Opens a Google Meet link if accessed between 10:00 AM - 8:00 PM.
-        - Displays a consultation schedule modal if accessed outside these hours.
-5. **User Profile (Private Route):**
-    - Displays logged-in user details (image, name, email).
-    - Includes an "Update" button to navigate to the profile update page.
-6. **Error Handling:**
-    - A 404 error page for invalid routes with a button to navigate back home.
-7. **Dynamic Features:**
-    - **Dynamic Titles:**
-        - Page titles change dynamically based on routes.
-    - **Animations:**
-        - Smooth animations using `AOS` or `Animate.css`.
+---
 
-## **Technologies Used**
+## 📌 Table of Contents
+
+- [🚀 Features](#-features)
+- [🛠 Technologies Used](#-technologies-used)
+- [📥 Installation](#-installation)
+- [📦 Dependencies](#-dependencies)
+- [📖 Usage](#-usage)
+- [🔑 Admin Credentials](#-admin-credentials)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+
+---
+
+## 🚀 Features
+
+✅ **Single Column Layout**  
+   - **Navbar:** Displays website name, navigation links, user profile (if logged in), and login/logout options.  
+   - **Footer:** Contains useful links and social icons.  
+
+✅ **Home Page**  
+   - **Banner Section:** Dynamic image slider showcasing eco-adventures.  
+   - **Adventure Listings:** Cards displaying adventure details with an “Explore Now” button.  
+   - **Extra Sections:** Additional customizable content.  
+
+✅ **Authentication System**  
+   - **Login/Register:** Email/password authentication and Google Sign-In.  
+   - **Password Reset:** Users can reset their passwords via email.  
+
+✅ **Adventure Details Page (Private Route)**  
+   - Displays complete adventure information.  
+   - "Talk with Expert" button connects to Google Meet (available from 10 AM - 8 PM).  
+
+✅ **User Profile (Private Route)**  
+   - Shows user details with an "Update" button.  
+
+✅ **Error Handling**  
+   - Custom 404 page with navigation options.  
+
+✅ **Dynamic Enhancements**  
+   - Dynamic page titles and animations using AOS/Animate.css.  
+
+---
+
+## 🛠 Technologies Used
 
 ### **Frontend:**
-
-- **React.js:** For building the application.
-- **Tailwind CSS:** For responsive and modern UI design.
-- **Swiper.js:** For creating a dynamic banner slider.
-- **AOS/Animate.css:** For adding smooth animations.
-- **React Router:** For navigation and routing.
+- **React.js** – Frontend framework  
+- **Tailwind CSS** – Responsive and modern UI design  
+- **Swiper.js** – Dynamic banner slider  
+- **AOS / Animate.css** – Smooth animations  
+- **React Router** – Navigation and routing  
 
 ### **Backend:**
+- **Firebase Authentication** – User authentication (email/password and Google login)  
 
-- **Firebase Authentication:**
-    - For user authentication (email/password and Google login).
-    - Password reset functionality.
+---
 
-## **How It Works**
+## 📥 Installation
 
-1. **Homepage:**
-    - Displays a banner slider and adventure cards.
-    - Clicking “Explore Now” redirects logged-in users to the adventure details page or non-logged-in users to the login page.
-2. **Authentication:**
-    - **Login:** Users log in using email/password or Google authentication.
-    - **Register:** New users sign up with email/password, validated against specific criteria.
-    - **Forgot Password:** Users reset their passwords via email.
-3. **Adventure Details Page:**
-    - Displays all adventure details dynamically based on the selected adventure.
-    - Includes a "Talk with Expert" button for consultation.
-4. **Private Routes:**
-    - **Adventure Details** and **Profile pages** are only accessible to logged-in users.
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/yourusername/mountain-treks.git
+cd mountain-treks
+```
+
+### **2️⃣ Install Dependencies**
+```sh
+npm install
+```
+
+### **3️⃣ Start the Development Server**
+```sh
+npm run dev
+```
+The app should now be running at `http://localhost:3000/`
+
+### **4️⃣ Set Up Firebase Authentication**
+- Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)  
+- Enable **Email/Password Authentication** and **Google Sign-In**  
+- Get your Firebase config and add it to `.env`:
+  ```env
+  REACT_APP_FIREBASE_API_KEY=your_api_key
+  REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+  REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+  ```
+
+---
+
+## 📦 Dependencies
+
+```json
+{
+  "react": "^18.0.0",
+  "react-router-dom": "^6.0.0",
+  "tailwindcss": "^3.0.0",
+  "firebase": "^9.0.0",
+  "swiper": "^8.0.0",
+  "aos": "^2.3.4"
+}
+```
+
+---
+
+## 📖 Usage
+
+1. **Homepage:**  
+   - Displays a banner slider and adventure cards.  
+   - Clicking “Explore Now” redirects logged-in users to the adventure details page.  
+   - Non-logged-in users are prompted to log in first.  
+
+2. **Authentication:**  
+   - **Login:** Users log in using email/password or Google authentication.  
+   - **Register:** New users sign up with email/password, validated against specific criteria.  
+   - **Forgot Password:** Users reset their passwords via email.  
+
+3. **Adventure Details Page:**  
+   - Displays adventure details dynamically based on the selected experience.  
+   - Includes a "Talk with Expert" button for consultation via Google Meet.  
+
+4. **Private Routes:**  
+   - Users need to be logged in to access adventure details and profile pages.  
+
+
+
+
+---
+
+
+Enjoy your adventure with **Mountain Treks**! 🚀🌿
